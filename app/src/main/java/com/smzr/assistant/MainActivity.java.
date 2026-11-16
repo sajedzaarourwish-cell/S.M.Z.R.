@@ -9,6 +9,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 if (checkSelfPermission(android.Manifest.permission.RECORD_AUDIO) != android.content.pm.PackageManager.PERMISSION_GRANTED) { requestPermissions(new String[]{android.Manifest.permission.RECORD_AUDIO}, 1); }
+`SpeechRecognizer speechRecognizer = SpeechRecognizer.createSpeechRecognizer(this); Intent intent = —
 
     }
 }
