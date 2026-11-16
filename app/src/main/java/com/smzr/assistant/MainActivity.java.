@@ -11,6 +11,10 @@ public class MainActivity extends AppCompatActivity {
 if (checkSelfPermission(android.Manifest.permission.RECORD_AUDIO) != android.content.pm.PackageManager.PERMISSION_GRANTED) { requestPermissions(new String[]{android.Manifest.permission.RECORD_AUDIO}, 1); }
 `SpeechRecognizer speechRecognizer = SpeechRecognizer.createSpeechRecognizer(this); Intent intent = —
 speechRecognizer.setRecognitionListener(new android.speech.RecognitionListener() { @Override public void onReadyForSpeech(android.os.Bundle params) {} @Override public void onBeginningOfSpeech() {} @Override public void onRmsChanged(float rmsdB) {} @Override public void onBufferReceived(byte[] buffer) {} @Override public void onEndOfSpeech() {} @Override public void onError(int error) {} @Override public void onResults(android.os.Bundle results) {} @Override public void onPartialResults(android.os.Bundle partialResults) {} @Override public void onEvent(int eventType, android.os.Bundle params) {} });
+intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, "ar-SA");
+intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_PREFERENCE, "ar-SA");
+intent.putExtra(RecognizerIntent.EXTRA_ONLY_RETURN_LANGUAGE_PREFERENCE, true);
+
 
     }
 }
